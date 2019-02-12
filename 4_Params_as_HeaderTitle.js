@@ -5,6 +5,9 @@ from 'react-navigation'
 
 // 1st component will send params {nama: 'Andi', usia: 28}!
 class KomponenSatu extends Component {
+  static navigationOptions = {
+    title: 'Satu'
+  }
   render(){
     return(
       <View>
@@ -25,13 +28,16 @@ class KomponenSatu extends Component {
   }
 }
 
-// 2nd component receive params from 1st component
+// 2nd component receive params & set it as header title
 class KomponenDua extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('nama', ''),
+    };
+  };
   render(){
-    // const nama = this.props.navigation.getParam('nama', '');
-    // const usia = this.props.navigation.getParam('usia', '');
-    const nama = this.props.navigation.getParam('nama');
-    const usia = this.props.navigation.getParam('usia');
+    const nama = this.props.navigation.getParam('nama', '');
+    const usia = this.props.navigation.getParam('usia', '');
     return(
       <View>
         <Text style={{fontSize: 35}}>

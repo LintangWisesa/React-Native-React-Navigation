@@ -2,7 +2,7 @@
 
 # ⚛️React Native & 📲React Navigation
 
-1. Install React Navigation package:__
+1. Install React Navigation package:
     
     ```bash
     $ npm i react-navigation
